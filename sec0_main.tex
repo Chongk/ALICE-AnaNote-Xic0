@@ -1,0 +1,51 @@
+\documentclass[ALICE,manyauthors]{ALICE_analysis_notes}
+
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage[hidelinks,linktocpage=true,hyperfigures=false,hyperfootnotes=false]{hyperref}
+\usepackage{lineno}
+\usepackage{multirow}
+\usepackage{perpage}
+\usepackage{rotating}
+\usepackage{xcolor}
+\usepackage{appendix}
+
+\PHnumber{ALICE-ANA-2022-xxx} 
+\PHdate{\today}
+\MakePerPage{footnote}
+\renewcommand{\thefootnote}{\alph{footnote}}
+\input{commands.tex}
+\linenumbers
+\setlength{\extrarowheight}{2pt}
+\setlist[itemize]{label=(\roman*), noitemsep, topsep=0.5\columnsep}
+
+%-------------------------------------------------------------
+
+\begin{document}
+%
+ \begin{titlepage}
+ \title{Multiplicity dependent \Xic production in \pp collisions at \s = 13 \TeV}
+ \ShortTitle{\Xic by multiplicity in \pp 13 \TeV} % appears on right page headers
+ %
+ \author{Chong Kim$^{1}$, Sanghoon Lim$^{1}$, Jinjoo Seo$^{2}$}
+ \author{1. Pusan National University\\ 2. Inha University}
+ \author{Email: kimc@cern.ch, shlim@pusan.ac.kr, jin.joo.seo@cern.ch}
+ \ShortAuthor{ALICE Analysis Note 2022} % appears on left page headers, do not change
+ %
+  \begin{abstract}
+  \red{TBU}
+  \end{abstract}
+ \end{titlepage}
+%
+\tableofcontents
+\clearpage
+%
+\input{sec1_intro} \clearpage
+\input{sec2_anaA} \clearpage
+\input{sec2_anaB} \clearpage
+\input{sec3_result} \clearpage
+\input{secY_appendix} \clearpage
+%
+\bibliographystyle{utphys}
+\bibliography{secZ_bib}
+\end{document}

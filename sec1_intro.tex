@@ -1,0 +1,113 @@
+\section{Introduction}
+
+This note is composed of mainly 3 sections: introductory information such as the used data sample will be presented in this section 1, a review on overall analysis processes will be presented in section 2, and final baryon-to-meson ratio and relevant systematic errors will be presented in section 3, respectively.
+
+%--------------------------------------------------------
+
+\vspace{\columnsep}
+\subsection{Recap}\label{sec:recap}
+In comparison with the measurement in $e^{+}e^{-}$ collisions \cite{dummy1}, recent ALICE measurement of the baryon-to-meson yield ratios in \pp collisions \cite{dummy2} indicate some unique hadronization mechanisms are involved in hadronic collisions. The study on ratio is an interesting subject by itself, however, by classifying the condition of its evolution even more detailed information can be obtained.
+
+This analysis aims to measure the baryon-to-meson ratio in \pp collisions by using \Xic baryons and \Dzero mesons, by sorting the ratio out with the multiplicity of the collision. Since there is a precisely measured multiplicity dependent \Dzero already \cite{ana993_D0}, the main focus of this analysis is on the measurement of the \Xic.
+
+Regarding the measurement of the \Xic, there is a well-established analysis strategy from previous \Xic $\rightarrow$ e\Xim analysis \cite{ana990_Xic0}. Therefore this analysis follows the steps already well-defined, especially with respect to the \pp 13 \TeV conditions to ensure the quality of the measurement, and then expand the scope by the desired multiplicity dependence.
+
+\vspace{\columnsep}
+\begin{table}[h]
+    \centering
+    \small
+    \begin{tabular}{c|c|c|c|c}
+    \hline\hline
+    %
+    Analysis / Item & Dataset & Trigger & Multiplicity & Observable \\\hline
+    Previous  & \multirow{2}{*}{Run 2 \pp 13 \TeV} & MB & Inclusive & cross-section ($b$) \\\cline{1-1} \cline{3-5}
+    This study & & MB and HMV0 & Separated & baryon-to-meson ratio \\
+    %
+    \hline\hline
+    \end{tabular}
+    \caption{Summary of differences between previous \Xic $\rightarrow$ e\Xim analysis and this study}
+    \label{tab:Xic0AnaDiff}
+\end{table}
+
+Lastly, the progress reports to the PWGHF-D2H are as follows.
+%
+\begin{itemize}
+    \small
+    \item[] \blue{List of contributions at the PWG-HF-D2H} \vspace{1pt}
+    \item[-] Mar. 05, 2021: \url{https://indico.cern.ch/event/1002394/}
+    \item[-] Dec. 03, 2021: \url{https://indico.cern.ch/event/1060685/}
+\end{itemize}
+
+\clearpage
+%--------------------------------------------------------
+
+\subsection{Dataset and Relevant conditions}\label{subsec:dataset}
+
+\vspace{\columnsep}
+\paragraph{Data/MC samples}\mbox{}\\
+The list of samples (full list can be found in appendix \ref{sec:appA}) for the analysis is as follows. For the \pp 13 \TeV data, the events were accepted if either the minimum-bias trigger (hereafter \red{MB} \footnote{\textit{AliVEvent::kINT7}}) or the high multiplicity trigger by V0 detector \footnote{To avoid confusions with later "V0 vertex", the items related to the V0 detector will be denoted as "V0 detector"} (hereafter \red{HMV0} \footnote{\textit{AliVEvent::kHighMultV0}}) is fired. For the MC, the samples are based on PYTHIA8. Note that the new WeakDecayFinder \cite{JiraTicket} is applied on both the data and the MC.
+%
+\begin{itemize}
+    \small
+    \item[] \blue{Data samples (periods)} \vspace{1pt}
+    \item[-] LHC16: d, e, g, h, j, o, p, k, and l
+    \item[-] LHC17: c, e, f, h, i, j, k, l, m, o, and r
+    \item[-] LHC18: b, d, e, f, g, h, i, j, k, l, m, n, o, and p
+    \vspace{\columnsep}
+    \item[] \blue{MC samples} \vspace{1pt}
+    \item[-] LHC20j7c\_XicSemilept\_P8\_2016
+    \item[-] LHC20j7b\_XicSemilept\_P8\_2017
+    \item[-] LHC20j7a\_XicSemilept\_P8\_2018
+\end{itemize}
+
+%--------------------------------------------------------
+
+\vspace{\columnsep}
+\paragraph{Analysis task}\mbox{}\\
+The analysis task (codes) used for the online event selection via Lego train is as follows.
+%
+\begin{itemize}
+    \small
+    \item[] \blue{Analysis task (last update: Oct. 26, 2021)} \vspace{1pt}
+    \item[-] PWGHF/vertexingHF/AliAnalysisTaskSEXic0Semileptonic.h
+    \item[-] PWGHF/vertexingHF/AliAnalysisTaskSEXic0Semileptonic.cxx
+    \item[-] PWGHF/vertexingHF/macros/AddTaskXic0Semileptonic.C
+\end{itemize}
+
+%--------------------------------------------------------
+
+\vspace{\columnsep}
+\paragraph{Lego train}\mbox{}\\
+The information of the Lego train run used for the analysis are as follows.
+%
+\begin{itemize}
+    \small
+    \item[] \blue{Lego train (completed at Oct. 28, 2021)} \vspace{1pt}
+    \item[-] AliRoot version: vAN-20211104\_ROOT6-1
+    \item[-] Wagons (data): \textit{AliMultSelectionTask}, \textit{PhysicsSelection}, \textit{PIDResponse}, and \textit{Xic0Semileptonic\_HM}
+    \item[-] Wagons (MC): \textit{AliMultSelectionTask}, \textit{PhysicsSelection}, \textit{PIDResponse\_TurnOnData},\\ \textit{ImproverTask\_CVMFS\_test}, and \textit{Xic0Semileptonic\_HM}
+\end{itemize}
+%
+\begin{table}[h]
+    \centering
+    \small
+    \begin{tabular}{c|c|l}
+    \hline\hline
+    Type & ID & Dataset \\\hline
+    %
+    \multirow{4}{*}{Data}
+    & 3787 & LHC2016\_AOD234\_deghjop\_13TeV \\
+    & 3788 & LHC2016\_AOD234\_kl\_13TeV \\
+    & 3789 & LHC2017\_AOD234\_cefhijklmor\_13TeV\_pp \\
+    & 3790 & LHC2018\_AOD264\_bdefghijklmnop\_13TeV \\\hline
+    %
+    \multirow{3}{*}{MC}
+    & 3302 & LHC20j7a\_XicSemilept\_P8\_2018 \\
+    & 3303 & LHC20j7b\_XicSemilept\_P8\_2017 \\
+    & 3304 & LHC20j7c\_XicSemilept\_P8\_2016 \\
+    %
+    \hline\hline
+    \end{tabular}
+    \caption{Information of Lego trains for the analysis}
+    \label{tab:lego}
+\end{table}
