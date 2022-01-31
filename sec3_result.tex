@@ -3,7 +3,7 @@
 %--------------------------------------------------------
 
 \subsection{Systematic errors}
-\red{TBU} Error: $|\text{condition\_vary - default}|$ / default * 100 (convert to \%)
+\red{TBU} % Error: $|\text{condition\_vary - default}|$ / default * 100 (convert to \%)
 
 \vspace{\columnsep}
 \begin{table}[h]
@@ -32,7 +32,7 @@
     && [0, 1, 2, 4, 6, 8, 12, 24] \\
     \Xib over-subtraction correction & \red{Disabled} & \red{TBU} \\
     Feed-down subtraction            & \red{Disabled} & \red{TBU} \\
-    Generated \pt shape & & \\
+    Generated \pt shape & Central fit (section \ref{subsubsec:ptWeighting}) & Fit variations \\
     %
     \hline\hline
     \end{tabular}
@@ -40,10 +40,10 @@
     \label{tab:systItems}
 \end{table}
 
-\begin{figure}
+\begin{figure}[b]
     \centering
-    \includegraphics[width=0.95\textwidth]{plots/s3_SystErr_2to12.png}
-    \caption{A}
+    \includegraphics[width=0.925\textwidth]{plots/s3_SystErr_2to12.png}
+    \caption{Estimated systematic errors in percentage. Note that the sum is a simple stack of all items.}
     \label{fig:s3_systErr}
 \end{figure}
 
